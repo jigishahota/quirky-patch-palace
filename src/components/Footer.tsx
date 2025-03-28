@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Twitter, Heart, Star } from "lucide-react";
 
@@ -9,11 +8,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="h-10 w-8 bg-primary rounded-sm flex items-center justify-center">
-                <div className="text-black font-extrabold text-xl rotate-90 tracking-tighter flex items-center">
-                  NOVA
-                  <Star className="h-3 w-3 ml-0.5" />
-                </div>
+              <div className="h-10 w-10 bg-primary rounded-md flex items-center justify-center">
+                <Star className="h-6 w-6 text-black" />
               </div>
               <span className="font-bold text-xl tracking-tight">NOVASKIN</span>
             </Link>
