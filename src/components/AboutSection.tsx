@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Star, Sparkles, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AboutSection = () => {
   return (
@@ -43,9 +44,11 @@ const AboutSection = () => {
             <p className="text-lg mb-6 text-gray-700">
               Our team of patch enthusiasts works tirelessly to create transdermal patches that not only look adorable but actually deliver real benefits through skin absorption. Each patch is crafted with love, science, and a dash of sparkle.
             </p>
-            <Button size="lg" className="rounded-full text-lg gap-2">
-              Our Story <Star size={16} />
-            </Button>
+            <Link to="/about">
+              <Button size="lg" className="rounded-full text-lg gap-2">
+                Our Story <Star size={16} />
+              </Button>
+            </Link>
           </div>
         </div>
       </div>

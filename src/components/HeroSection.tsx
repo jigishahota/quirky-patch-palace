@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, Sparkles, Square } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -19,12 +20,16 @@ const HeroSection = () => {
               Transform your daily wellness routine with our innovative skin-administered patches. Convenient, effective, and perfect for your busy lifestyle.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button size="lg" className="rounded-full text-lg font-semibold px-8 bg-primary text-black hover:bg-primary/90">
-                Shop Now
-              </Button>
-              <Button size="lg" variant="outline" className="rounded-full text-lg font-semibold px-8 gap-2 border-black hover:bg-black hover:text-white">
-                Learn More <ArrowRight size={16} />
-              </Button>
+              <Link to="/products">
+                <Button size="lg" className="rounded-full text-lg font-semibold px-8 bg-primary text-black hover:bg-primary/90">
+                  Shop Now
+                </Button>
+              </Link>
+              <Link to="/about">
+                <Button size="lg" variant="outline" className="rounded-full text-lg font-semibold px-8 gap-2 border-black hover:bg-black hover:text-white">
+                  Learn More <ArrowRight size={16} />
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="w-full md:w-1/2 relative">
