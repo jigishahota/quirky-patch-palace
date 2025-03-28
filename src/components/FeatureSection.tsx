@@ -1,6 +1,6 @@
 
 import { Badge } from "@/components/ui/badge";
-import { Zap, Battery, Coffee, Moon } from "lucide-react";
+import { Zap, Battery, Coffee, Moon, Star } from "lucide-react";
 
 const features = [
   {
@@ -30,10 +30,15 @@ const FeatureSection = () => {
     <section className="py-16 md:py-24 bg-quirky-gradient-2">
       <div className="container px-4 mx-auto">
         <div className="text-center mb-12">
-          <Badge variant="outline" className="mb-4 px-4 py-1 rounded-full border-primary/20 bg-primary/5 text-primary font-semibold">
-            Why Nova Skin?
-          </Badge>
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <div className="flex justify-center mb-4">
+            <div className="h-12 w-10 bg-primary rounded-sm flex items-center justify-center">
+              <div className="text-black font-extrabold text-xl rotate-90 tracking-tighter flex items-center">
+                NOVA
+                <Star className="h-3 w-3 ml-0.5" />
+              </div>
+            </div>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 uppercase tracking-tight">
             Feel-Good Patches That Actually Work
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">

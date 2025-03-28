@@ -2,14 +2,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Star, Heart, Coffee, Moon, Zap } from "lucide-react";
+import { Sparkles, Star, Heart, Coffee, Moon, Zap, IndianRupee } from "lucide-react";
 
 const products = [
   {
     id: 1,
     name: "Super Nova Box",
     description: "Our pocket-sized yellow box to store and carry your patches wherever life takes you!",
-    price: 19.99,
+    price: 1599,
     badge: "Bestseller",
     color: "bg-primary",
     special: true
@@ -18,7 +18,7 @@ const products = [
     id: 2,
     name: "B12 Boost",
     description: "A vitamin-infused patch that keeps you energized all day long",
-    price: 14.99,
+    price: 1199,
     badge: "New",
     color: "bg-[#9B7EDD]",
     icon: <Zap className="h-10 w-10" />,
@@ -28,7 +28,7 @@ const products = [
     id: 3,
     name: "Dream Catcher",
     description: "Fall asleep faster and sleep deeper with our melatonin-infused patches",
-    price: 16.99,
+    price: 1299,
     badge: null,
     color: "bg-secondary",
     icon: <Moon className="h-10 w-10" />,
@@ -38,7 +38,7 @@ const products = [
     id: 4,
     name: "Caffeine Kick",
     description: "Your coffee alternative - clean energy without the jitters or crashes",
-    price: 15.99,
+    price: 1199,
     badge: "Popular",
     color: "bg-accent",
     icon: <Coffee className="h-10 w-10" />,
@@ -74,7 +74,12 @@ const ProductShowcase = () => {
                     <div className="text-center relative">
                       <div className="w-48 h-48 bg-primary rounded-xl mx-auto mb-6 shadow-lg bounce relative">
                         <div className="absolute inset-2 bg-primary border-4 border-black rounded-lg flex items-center justify-center">
-                          <Star className="h-12 w-12 text-black wiggle" />
+                          <div className="h-10 w-8 bg-primary flex items-center justify-center">
+                            <div className="text-black font-extrabold text-xl rotate-90 tracking-tighter flex items-center">
+                              NOVA
+                              <Star className="h-3 w-3 ml-0.5" />
+                            </div>
+                          </div>
                         </div>
                         <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white border-2 border-black"></div>
                         <div className="absolute -bottom-2 -left-2 w-6 h-6 rounded-full bg-white border-2 border-black"></div>
@@ -98,7 +103,10 @@ const ProductShowcase = () => {
                 <h3 className="text-xl font-bold mb-2">{product.name}</h3>
                 <p className="text-gray-600 text-sm mb-4">{product.description}</p>
                 <div className="flex items-center justify-between">
-                  <span className="font-bold">${product.price}</span>
+                  <span className="font-bold flex items-center">
+                    <IndianRupee className="h-4 w-4 mr-1" />
+                    {product.price}
+                  </span>
                   <Button size="sm" className={`rounded-full ${product.special ? 'bg-black text-white hover:bg-gray-800' : ''}`}>
                     Add to Cart
                   </Button>
