@@ -13,10 +13,10 @@ const HeroSection = () => {
               <span className="text-sm font-semibold">Feel Your Best On-The-Go</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-              Pocket-Sized <span className="text-primary">Energy</span> Patches!
+              Pocket-Sized <span className="text-primary">Wellness</span> Patches!
             </h1>
             <p className="text-lg mb-8 text-gray-700 max-w-lg mx-auto md:mx-0">
-              B12, caffeine, sleep aid, and pre-workout patches packed in a cute portable box to energize your day, anytime, anywhere.
+              Transform your daily wellness routine with our innovative skin-administered patches. Convenient, effective, and perfect for your busy lifestyle.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button size="lg" className="rounded-full text-lg font-semibold px-8 bg-primary text-black hover:bg-primary/90">
