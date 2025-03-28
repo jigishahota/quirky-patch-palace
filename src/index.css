@@ -16,8 +16,8 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 252 94% 67%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 48 100% 50%;
+    --primary-foreground: 240 5.9% 10%;
 
     --secondary: 169 100% 42%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -106,6 +106,24 @@
     }
   }
   
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+  
+  @keyframes wiggle {
+    0%, 100% {
+      transform: rotate(-3deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+  
   @keyframes pulse {
     0%, 100% {
       transform: scale(1);
@@ -119,19 +137,35 @@
     animation: float 3s ease-in-out infinite;
   }
   
+  .bounce {
+    animation: bounce 2s ease-in-out infinite;
+  }
+  
+  .wiggle {
+    animation: wiggle 2s ease-in-out infinite;
+  }
+  
   .pulse {
     animation: pulse 2s ease-in-out infinite;
   }
   
   .bg-quirky-gradient {
-    background: linear-gradient(90deg, hsla(252, 94%, 67%, 0.3) 0%, hsla(346, 89%, 64%, 0.3) 100%);
+    background: #FEF9E7;
   }
   
   .bg-quirky-gradient-2 {
-    background: linear-gradient(90deg, hsla(169, 100%, 42%, 0.2) 0%, hsla(252, 94%, 67%, 0.2) 100%);
+    background: #FEF7CD;
   }
 }
 
 .font-nunito {
   font-family: 'Nunito', sans-serif;
+}
+
+.rounded-supernova {
+  border-radius: 50%;
+}
+
+.bg-supernova {
+  background-color: #FFD700;
 }

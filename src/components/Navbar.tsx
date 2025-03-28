@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ShoppingBag, Menu, X } from "lucide-react";
+import { ShoppingBag, Menu, X, Star } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -8,11 +8,11 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
-          <div className="h-10 w-10 bg-primary rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-xl">N</span>
+          <div className="h-10 w-10 bg-primary rounded-full flex items-center justify-center wiggle">
+            <span className="text-black font-bold text-xl">N</span>
           </div>
           <span className="font-bold text-xl">Nova Skin</span>
         </Link>
@@ -30,7 +30,7 @@ const Navbar = () => {
           <Link to="/products" className="font-semibold hover:text-primary transition-colors">Products</Link>
           <Link to="/about" className="font-semibold hover:text-primary transition-colors">About</Link>
           <Link to="/faq" className="font-semibold hover:text-primary transition-colors">FAQ</Link>
-          <Button size="sm" className="gap-2 rounded-full">
+          <Button size="sm" className="gap-2 rounded-full bg-black text-white hover:bg-gray-800">
             <ShoppingBag size={16} />
             Cart (0)
           </Button>
@@ -42,7 +42,7 @@ const Navbar = () => {
             <Link to="/products" className="font-semibold py-2 hover:text-primary transition-colors">Products</Link>
             <Link to="/about" className="font-semibold py-2 hover:text-primary transition-colors">About</Link>
             <Link to="/faq" className="font-semibold py-2 hover:text-primary transition-colors">FAQ</Link>
-            <Button size="sm" className="gap-2 rounded-full">
+            <Button size="sm" className="gap-2 rounded-full bg-black text-white hover:bg-gray-800">
               <ShoppingBag size={16} />
               Cart (0)
             </Button>
