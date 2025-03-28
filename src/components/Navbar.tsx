@@ -12,9 +12,9 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2">
           <div className="h-10 w-10 bg-primary rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-xl">P</span>
+            <span className="text-white font-bold text-xl">N</span>
           </div>
-          <span className="font-bold text-xl">PatchPal</span>
+          <span className="font-bold text-xl">Nova Skin</span>
         </Link>
 
         {/* Mobile menu button */}

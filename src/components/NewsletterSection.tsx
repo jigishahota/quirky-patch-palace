@@ -14,7 +14,7 @@ const NewsletterSection = () => {
     if (email) {
       toast({
         title: "You're on the list!",
-        description: "Get ready for patches, perks, and plenty of fun!",
+        description: "Get ready for skin-loving, space-inspired goodness!",
         variant: "default",
       });
       setEmail("");
@@ -27,15 +27,15 @@ const NewsletterSection = () => {
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white mb-6 shadow-sm">
             <PartyPopper className="h-5 w-5 text-primary" />
-            <span className="font-semibold text-sm">Join the Patch Party!</span>
+            <span className="font-semibold text-sm">Join the Nova Club!</span>
           </div>
           
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get Patchy Updates & Exclusive Offers
+            Get Nova Updates & Exclusive Offers
           </h2>
           
           <p className="text-gray-600 mb-8">
-            Sign up for our newsletter and be the first to know about new patch drops, special deals, and patch-tastic content!
+            Sign up for our newsletter and be the first to know about new product drops, special deals, and skin-saving content!
           </p>
           
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
@@ -53,7 +53,7 @@ const NewsletterSection = () => {
           </form>
           
           <p className="text-sm text-gray-500 mt-4">
-            We promise not to spam! Only good vibes and patch updates.
+            We promise not to spam! Only good vibes and skin-loving updates.
           </p>
         </div>
       </div>

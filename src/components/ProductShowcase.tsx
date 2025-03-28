@@ -2,16 +2,17 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Star } from "lucide-react";
+import { Sparkles, Star, Sun } from "lucide-react";
 
 const products = [
   {
     id: 1,
-    name: "Energy Boost",
-    description: "Wake up your day with an instant boost of good vibes",
-    price: 14.99,
+    name: "Super Nova",
+    description: "Our flagship product! Powerful rejuvenation for your skin's universe",
+    price: 19.99,
     badge: "Bestseller",
-    color: "bg-primary"
+    color: "bg-yellow-300",
+    special: true
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ const products = [
     description: "Find your zen when life gets a little too extra",
     price: 14.99,
     badge: "New",
-    color: "bg-[#9B7EDD]"
+    color: "bg-[#9B7EDD]",
+    special: false
   },
   {
     id: 3,
@@ -27,7 +29,8 @@ const products = [
     description: "Drift off to dreamland faster than a sloth on vacation",
     price: 16.99,
     badge: null,
-    color: "bg-secondary"
+    color: "bg-secondary",
+    special: false
   },
   {
     id: 4,
@@ -35,7 +38,8 @@ const products = [
     description: "Your pre-game buddy for those big nights out",
     price: 15.99,
     badge: "Limited",
-    color: "bg-accent"
+    color: "bg-accent",
+    special: false
   }
 ];
 
@@ -46,23 +50,33 @@ const ProductShowcase = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 flex items-center justify-center gap-2">
             <Star className="text-primary h-7 w-7" /> 
-            <span>Shop Our Patches</span> 
+            <span>Shop Our Skin Patches</span> 
             <Star className="text-primary h-7 w-7" />
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Find the perfect patch for whatever life throws your way
+            Find the perfect patch for whatever life throws at your skin
           </p>
         </div>
         
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {products.map((product) => (
-            <Card key={product.id} className="overflow-hidden group hover:shadow-lg transition-all duration-300">
-              <div className="aspect-square relative overflow-hidden">
-                <div className={`absolute inset-0 ${product.color} opacity-20 group-hover:opacity-30 transition-opacity`}></div>
+            <Card 
+              key={product.id} 
+              className={`overflow-hidden group hover:shadow-lg transition-all duration-300 ${product.special ? 'col-span-1 sm:col-span-2 lg:col-span-2 row-span-2' : ''}`}
+            >
+              <div className={`${product.special ? 'aspect-square sm:aspect-auto sm:h-80' : 'aspect-square'} relative overflow-hidden`}>
+                <div className={`absolute inset-0 ${product.color} ${product.special ? 'opacity-80' : 'opacity-20'} group-hover:opacity-90 transition-opacity`}></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className={`w-24 h-24 ${product.color} rounded-full flex items-center justify-center text-white font-bold float`}>
-                    <Sparkles className="h-10 w-10" />
-                  </div>
+                  {product.special ? (
+                    <div className="text-center">
+                      <Sun className="h-24 w-24 text-white mx-auto mb-4 animate-spin-slow" />
+                      <h2 className="text-4xl font-extrabold text-white">SUPER NOVA</h2>
+                    </div>
+                  ) : (
+                    <div className={`w-24 h-24 ${product.color} rounded-full flex items-center justify-center text-white font-bold float`}>
+                      <Sparkles className="h-10 w-10" />
+                    </div>
+                  )}
                 </div>
                 {product.badge && (
                   <Badge className="absolute top-4 right-4 bg-white text-primary">
