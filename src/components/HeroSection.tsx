@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Sparkles, Square } from "lucide-react";
+import { ArrowRight, Star, Square } from "lucide-react";
 
 const HeroSection = () => {
   return (
