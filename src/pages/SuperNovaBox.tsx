@@ -77,7 +77,7 @@ const SuperNovaBox = () => {
               <div className="w-full md:w-1/2">
                 <div className="bg-yellow-100 rounded-2xl p-8 flex items-center justify-center h-full">
                   <img 
-                    src="/lovable-uploads/6fd8b100-c2ae-4c93-9d36-274245e8c805.png" 
+                    src="/lovable-uploads/1cceb897-3cf7-4446-8da8-c25b795d4935.png" 
                     alt="Supernova" 
                     className="max-w-full max-h-96 object-contain"
                   />
