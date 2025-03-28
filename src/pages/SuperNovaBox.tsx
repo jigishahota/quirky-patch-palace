@@ -124,6 +124,7 @@ const SuperNovaBox = () => {
                   </li>
                 </ul>
                 
+                {/* Improved patch selection section with better proportions */}
                 <div className="mb-8">
                   <h3 className="text-xl font-bold mb-4">Choose Your 4 Patches</h3>
                   <div className="bg-gray-50 p-6 rounded-lg">
@@ -132,42 +133,46 @@ const SuperNovaBox = () => {
                         <TabsTrigger value="patches">Select Patches</TabsTrigger>
                         <TabsTrigger value="selected">Your Selection ({selectedPatches.length}/4)</TabsTrigger>
                       </TabsList>
-                      <TabsContent value="patches" className="space-y-4">
-                        {patches.map(patch => (
-                          <div 
-                            key={patch.id}
-                            onClick={() => togglePatch(patch.id)}
-                            className={`p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 flex items-center gap-4
-                              ${selectedPatches.includes(patch.id) 
-                                ? 'border-primary bg-primary/5' 
-                                : 'border-gray-200 hover:border-gray-300'}`}
-                          >
-                            <div className="flex-shrink-0">
-                              {patch.icon}
+                      <TabsContent value="patches">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          {patches.map(patch => (
+                            <div 
+                              key={patch.id}
+                              onClick={() => togglePatch(patch.id)}
+                              className={`p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 flex items-center gap-3
+                                ${selectedPatches.includes(patch.id) 
+                                  ? 'border-primary bg-primary/5' 
+                                  : 'border-gray-200 hover:border-gray-300'}`}
+                            >
+                              <div className="flex-shrink-0">
+                                {patch.icon}
+                              </div>
+                              <div className="flex-grow">
+                                <h4 className="font-bold">{patch.name}</h4>
+                                <p className="text-sm text-gray-600">{patch.description}</p>
+                              </div>
+                              <div className="flex-shrink-0">
+                                {selectedPatches.includes(patch.id) && (
+                                  <div className="bg-primary text-white rounded-full p-1">
+                                    <Check className="h-4 w-4" />
+                                  </div>
+                                )}
+                              </div>
                             </div>
-                            <div className="flex-grow">
-                              <h4 className="font-bold">{patch.name}</h4>
-                              <p className="text-sm text-gray-600">{patch.description}</p>
-                            </div>
-                            <div className="flex-shrink-0">
-                              {selectedPatches.includes(patch.id) && (
-                                <div className="bg-primary text-white rounded-full p-1">
-                                  <Check className="h-4 w-4" />
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        ))}
+                          ))}
+                        </div>
                       </TabsContent>
                       <TabsContent value="selected">
-                        <div className="space-y-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           {selectedPatches.length > 0 ? (
                             selectedPatches.map(id => {
                               const patch = patches.find(p => p.id === id);
                               if (!patch) return null;
                               return (
-                                <div key={patch.id} className="flex items-center gap-4 bg-white p-3 rounded-lg border">
-                                  {patch.icon}
+                                <div key={patch.id} className="flex items-center gap-3 bg-white p-4 rounded-lg border shadow-sm">
+                                  <div className="p-2 rounded-full" style={{ backgroundColor: 'rgba(155, 126, 221, 0.1)' }}>
+                                    {patch.icon}
+                                  </div>
                                   <div>
                                     <h4 className="font-bold">{patch.name}</h4>
                                     <p className="text-sm text-gray-600">{patch.description}</p>
@@ -176,7 +181,7 @@ const SuperNovaBox = () => {
                               );
                             })
                           ) : (
-                            <p className="text-gray-500 text-center py-4">No patches selected. Please select at least 1 patch.</p>
+                            <p className="text-gray-500 text-center py-4 col-span-2">No patches selected. Please select at least 1 patch.</p>
                           )}
                         </div>
                       </TabsContent>
