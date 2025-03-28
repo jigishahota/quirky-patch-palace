@@ -19,38 +19,35 @@ const SuperNovaBox = () => {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <Badge variant="outline" className="mb-4 text-base px-4 py-1 border-primary text-primary">
-                Premium Subscription
+                Featured Product
               </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">The Supernova</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">The Supernova Box</h1>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-                Our signature monthly subscription delivers a curated selection of our best patches
-                right to your doorstep. Customize your box and save up to 25% compared to buying patches individually.
+                Our adorable yellow storage box keeps your patches organized and protected wherever you go.
+                Get started with a box and refill with your favorite patches!
               </p>
             </div>
 
             <div className="flex flex-col md:flex-row gap-8 mb-20">
               <div className="w-full md:w-1/2">
                 <div className="bg-yellow-100 rounded-2xl p-8 flex items-center justify-center h-full">
-                  <div className="relative">
-                    <div className="w-60 h-60 bg-white rounded-xl shadow-lg flex items-center justify-center">
-                      <Box className="h-20 w-20 text-primary" />
-                    </div>
-                    <div className="absolute -top-4 -right-4 w-16 h-16 bg-primary rounded-full flex items-center justify-center">
-                      <Sparkles className="h-8 w-8 text-black" />
-                    </div>
-                  </div>
+                  <img 
+                    src="/lovable-uploads/6fd8b100-c2ae-4c93-9d36-274245e8c805.png" 
+                    alt="Supernova Box" 
+                    className="max-w-full max-h-96 object-contain"
+                  />
                 </div>
               </div>
               <div className="w-full md:w-1/2">
-                <h2 className="text-3xl font-bold mb-6">What's Included</h2>
+                <h2 className="text-3xl font-bold mb-6">Why You'll Love It</h2>
                 <ul className="space-y-4 mb-8">
                   <li className="flex items-start gap-3">
                     <div className="mt-1 bg-primary/20 rounded-full p-1">
                       <Check className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg">30 Premium Patches</h3>
-                      <p className="text-gray-600">Choose any combination of our premium patches to create your perfect box</p>
+                      <h3 className="font-bold text-lg">Cute & Portable</h3>
+                      <p className="text-gray-600">Take your patches anywhere with this compact yellow box</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -58,8 +55,8 @@ const SuperNovaBox = () => {
                       <Check className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg">Free Shipping</h3>
-                      <p className="text-gray-600">Enjoy free shipping on all subscription boxes</p>
+                      <h3 className="font-bold text-lg">Keeps Patches Fresh</h3>
+                      <p className="text-gray-600">Protects your patches from dust and damage</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -67,8 +64,8 @@ const SuperNovaBox = () => {
                       <Check className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg">Early Access</h3>
-                      <p className="text-gray-600">Be the first to try new patch formulations before they're released</p>
+                      <h3 className="font-bold text-lg">Mirror Inside</h3>
+                      <p className="text-gray-600">Makes it easy to apply patches precisely</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -76,21 +73,33 @@ const SuperNovaBox = () => {
                       <Check className="h-4 w-4 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-lg">Exclusive Bonus Items</h3>
-                      <p className="text-gray-600">Receive surprise wellness gifts with your monthly delivery</p>
+                      <h3 className="font-bold text-lg">Refillable Design</h3>
+                      <p className="text-gray-600">Buy any of our patch refills to customize your wellness routine</p>
                     </div>
                   </li>
                 </ul>
                 <div className="bg-gray-50 p-6 rounded-lg mb-8">
                   <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-xl font-bold">Monthly Subscription</h3>
+                    <h3 className="text-xl font-bold">Supernova Box</h3>
                     <div className="flex items-center">
                       <IndianRupee className="h-4 w-4 mr-1" />
-                      <span className="font-bold text-2xl">3,499</span>
+                      <span className="font-bold text-2xl">999</span>
                     </div>
                   </div>
-                  <p className="text-gray-600 mb-4">Cancel or modify anytime. No commitment required.</p>
-                  <Button size="lg" className="w-full rounded-full">Subscribe Now</Button>
+                  <p className="text-gray-600 mb-4">Comes with 4 sample star-shaped patches to get you started!</p>
+                  <Button size="lg" className="w-full rounded-full">Add to Cart</Button>
+                </div>
+                
+                <div className="bg-primary/10 p-6 rounded-lg">
+                  <h3 className="font-bold text-lg mb-2 flex items-center gap-2">
+                    <Sparkles className="h-5 w-5" /> Refill with Your Favorite Patches
+                  </h3>
+                  <p className="text-gray-700 mb-4">
+                    After getting your Supernova box, check out our collection of refill patches for energy, sleep, focus, and more!
+                  </p>
+                  <Button variant="outline" className="w-full rounded-full border-black hover:bg-black hover:text-white">
+                    Browse Patch Refills
+                  </Button>
                 </div>
               </div>
             </div>

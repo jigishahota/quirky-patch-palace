@@ -2,77 +2,85 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Star, Heart, Coffee, Moon, Zap, IndianRupee, Brain, Leaf, Dumbbell, Focus } from "lucide-react";
+import { Sparkles, Star, Heart, Coffee, Moon, Zap, IndianRupee, Brain, Leaf, Dumbbell } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const products = [
   {
     id: 1,
-    name: "Supernova",
+    name: "Supernova Box",
     description: "Our pocket-sized yellow box to store and carry your patches wherever life takes you!",
-    price: 1599,
+    price: 999,
     badge: "Bestseller",
     color: "bg-primary",
-    special: true
+    special: true,
+    path: "/super-nova-box"
   },
   {
     id: 2,
     name: "B12 Boost",
-    description: "A vitamin-infused patch that keeps you energized all day long",
+    description: "A vitamin-infused refill patch that keeps you energized all day long",
     price: 1199,
     badge: "New",
     color: "bg-[#9B7EDD]",
     icon: <Zap className="h-10 w-10" />,
-    special: false
+    special: false,
+    path: "/products"
   },
   {
     id: 3,
     name: "Dream Catcher",
-    description: "Fall asleep faster and sleep deeper with our melatonin-infused patches",
+    description: "Fall asleep faster and sleep deeper with our melatonin-infused refill patches",
     price: 1299,
     badge: null,
     color: "bg-secondary",
     icon: <Moon className="h-10 w-10" />,
-    special: false
+    special: false,
+    path: "/products"
   },
   {
     id: 4,
     name: "Caffeine Kick",
-    description: "Your coffee alternative - clean energy without the jitters or crashes",
+    description: "Your coffee alternative refill patch - clean energy without the jitters or crashes",
     price: 1199,
     badge: "Popular",
     color: "bg-accent",
     icon: <Coffee className="h-10 w-10" />,
-    special: false
+    special: false,
+    path: "/products"
   },
   {
     id: 5,
     name: "Focus Formula",
-    description: "Stay concentrated and enhance mental clarity with our nootropic patches",
+    description: "Stay concentrated and enhance mental clarity with our nootropic refill patches",
     price: 1399,
     badge: "New",
     color: "bg-[#64B5F6]",
     icon: <Brain className="h-10 w-10" />,
-    special: false
+    special: false,
+    path: "/products"
   },
   {
     id: 6,
     name: "Pre-Workout Power",
-    description: "Get pumped for your workout with our energy-boosting fitness patches",
+    description: "Get pumped for your workout with our energy-boosting fitness refill patches",
     price: 1499,
     badge: "For Athletes",
     color: "bg-[#FF5252]",
     icon: <Dumbbell className="h-10 w-10" />,
-    special: false
+    special: false,
+    path: "/products"
   },
   {
     id: 7,
     name: "Chill Pill",
-    description: "De-stress and find your calm with our anxiety-reducing patches",
+    description: "De-stress and find your calm with our anxiety-reducing refill patches",
     price: 1299,
     badge: null,
     color: "bg-[#81C784]",
     icon: <Leaf className="h-10 w-10" />,
-    special: false
+    special: false,
+    path: "/products"
   }
 ];
 
@@ -83,11 +91,11 @@ const ProductShowcase = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 flex items-center justify-center gap-2">
             <Star className="text-primary h-7 w-7 wiggle" /> 
-            <span>Shop Our Wellness Patches</span> 
+            <span>Shop Our Wellness Products</span> 
             <Star className="text-primary h-7 w-7 wiggle" />
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Feel-good patches for energy, sleep, focus, and more - all stored in our cute Supernova box
+            Get our cute Supernova box and refill it with our wellness patches for energy, sleep, focus, and more
           </p>
         </div>
         
@@ -102,18 +110,11 @@ const ProductShowcase = () => {
                 <div className="absolute inset-0 flex items-center justify-center">
                   {product.special ? (
                     <div className="text-center relative">
-                      <div className="w-48 h-48 bg-primary rounded-xl mx-auto mb-6 shadow-lg bounce relative">
-                        <div className="absolute inset-2 bg-primary border-4 border-black rounded-lg flex items-center justify-center">
-                          <div className="h-10 w-8 bg-primary flex items-center justify-center">
-                            <div className="text-black font-extrabold text-xl rotate-90 tracking-tighter flex items-center">
-                              NOVA
-                              <Star className="h-3 w-3 ml-0.5" />
-                            </div>
-                          </div>
-                        </div>
-                        <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white border-2 border-black"></div>
-                        <div className="absolute -bottom-2 -left-2 w-6 h-6 rounded-full bg-white border-2 border-black"></div>
-                      </div>
+                      <img 
+                        src="/lovable-uploads/6fd8b100-c2ae-4c93-9d36-274245e8c805.png" 
+                        alt="Supernova Box" 
+                        className="h-48 mx-auto mb-6 object-contain"
+                      />
                       <h2 className="text-4xl font-extrabold text-black wiggle">SUPERNOVA</h2>
                       <p className="text-black font-bold">Pocket-Sized Patch Carrier</p>
                     </div>
@@ -147,9 +148,11 @@ const ProductShowcase = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="outline" size="lg" className="rounded-full font-semibold border-2 border-black hover:bg-black hover:text-white">
-            View All Products
-          </Button>
+          <Link to="/products">
+            <Button variant="outline" size="lg" className="rounded-full font-semibold border-2 border-black hover:bg-black hover:text-white">
+              View All Products
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
