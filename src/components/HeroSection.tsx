@@ -10,13 +10,13 @@ const HeroSection = () => {
           <div className="w-full md:w-1/2 text-center md:text-left">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black text-white mb-6">
               <Star size={16} className="text-primary" />
-              <span className="text-sm font-semibold">Your Daily Dose of Cute</span>
+              <span className="text-sm font-semibold">Feel Your Best On-The-Go</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
-              Feel Good <span className="text-primary">Patches</span> for Your Skin!
+              Pocket-Sized <span className="text-primary">Energy</span> Patches!
             </h1>
             <p className="text-lg mb-8 text-gray-700 max-w-lg mx-auto md:mx-0">
-              Super cute, fun, and super effective patches that bring joy to your skincare routine. Made with love!
+              B12, caffeine, sleep aid, and pre-workout patches packed in a cute portable box to energize your day, anytime, anywhere.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <Button size="lg" className="rounded-full text-lg font-semibold px-8 bg-primary text-black hover:bg-primary/90">

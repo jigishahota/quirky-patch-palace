@@ -1,22 +1,22 @@
 
 import { Badge } from "@/components/ui/badge";
-import { Heart, Battery, Coffee, Moon } from "lucide-react";
+import { Zap, Battery, Coffee, Moon } from "lucide-react";
 
 const features = [
   {
-    icon: <Heart className="h-6 w-6 text-accent" />,
-    title: "Feel the Love",
-    description: "Our patches are infused with all the good stuff your body craves. Like a hug, but science-y!"
+    icon: <Zap className="h-6 w-6 text-accent" />,
+    title: "Instant Effect",
+    description: "Our patches deliver a subtle but noticeable boost when you need it most, without the crash."
   },
   {
     icon: <Battery className="h-6 w-6 text-secondary" />,
-    title: "Instant Recharge",
-    description: "Need a boost? Our patches deliver a gentle pick-me-up when you need it most."
+    title: "All Day Energy",
+    description: "Our B12 patches keep you going from morning meetings to evening workouts."
   },
   {
     icon: <Coffee className="h-6 w-6 text-primary" />,
-    title: "Morning Magic",
-    description: "Wake up on the right side of the bed every day with our energizing patches."
+    title: "Better Than Coffee",
+    description: "Get your caffeine fix without the jitters or digestive issues. Clean energy all day."
   },
   {
     icon: <Moon className="h-6 w-6 text-[#9B7EDD]" />,
@@ -31,13 +31,13 @@ const FeatureSection = () => {
       <div className="container px-4 mx-auto">
         <div className="text-center mb-12">
           <Badge variant="outline" className="mb-4 px-4 py-1 rounded-full border-primary/20 bg-primary/5 text-primary font-semibold">
-            Why PatchPal?
+            Why Nova Skin?
           </Badge>
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            More Than Just a Sticky Situation
+            Feel-Good Patches That Actually Work
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Our patches are designed to make you feel amazing while looking cute. Because who says wellness can't be fun?
+            Our wellness patches are designed to give you the energy, focus, and rest you need - all in a super cute pocket-sized box.
           </p>
         </div>
         

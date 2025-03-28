@@ -27,8 +27,8 @@ const Navbar = () => {
 
         {/* Desktop navigation */}
         <div className="hidden md:flex items-center gap-8">
-          <Link to="/products" className="font-semibold hover:text-primary transition-colors">Products</Link>
-          <Link to="/about" className="font-semibold hover:text-primary transition-colors">About</Link>
+          <Link to="/products" className="font-semibold hover:text-primary transition-colors">Patches</Link>
+          <Link to="/about" className="font-semibold hover:text-primary transition-colors">Super Nova Box</Link>
           <Link to="/faq" className="font-semibold hover:text-primary transition-colors">FAQ</Link>
           <Button size="sm" className="gap-2 rounded-full bg-black text-white hover:bg-gray-800">
             <ShoppingBag size={16} />
@@ -39,8 +39,8 @@ const Navbar = () => {
         {/* Mobile menu */}
         {isMenuOpen && (
           <div className="absolute top-full left-0 w-full bg-white border-b md:hidden py-4 px-4 flex flex-col gap-4">
-            <Link to="/products" className="font-semibold py-2 hover:text-primary transition-colors">Products</Link>
-            <Link to="/about" className="font-semibold py-2 hover:text-primary transition-colors">About</Link>
+            <Link to="/products" className="font-semibold py-2 hover:text-primary transition-colors">Patches</Link>
+            <Link to="/about" className="font-semibold py-2 hover:text-primary transition-colors">Super Nova Box</Link>
             <Link to="/faq" className="font-semibold py-2 hover:text-primary transition-colors">FAQ</Link>
             <Button size="sm" className="gap-2 rounded-full bg-black text-white hover:bg-gray-800">
               <ShoppingBag size={16} />

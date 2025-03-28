@@ -2,13 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Star, Heart } from "lucide-react";
+import { Sparkles, Star, Heart, Coffee, Moon, Zap } from "lucide-react";
 
 const products = [
   {
     id: 1,
-    name: "Super Nova",
-    description: "Our flagship yellow patch! Brightens your skin's universe with cosmic energy",
+    name: "Super Nova Box",
+    description: "Our pocket-sized yellow box to store and carry your patches wherever life takes you!",
     price: 19.99,
     badge: "Bestseller",
     color: "bg-primary",
@@ -16,8 +16,8 @@ const products = [
   },
   {
     id: 2,
-    name: "Calm & Cool",
-    description: "Find your zen when life gets a little too extra",
+    name: "B12 Boost",
+    description: "A vitamin-infused patch that keeps you energized all day long",
     price: 14.99,
     badge: "New",
     color: "bg-[#9B7EDD]",
@@ -25,8 +25,8 @@ const products = [
   },
   {
     id: 3,
-    name: "Sweet Dreams",
-    description: "Drift off to dreamland faster than a sloth on vacation",
+    name: "Dream Catcher",
+    description: "Fall asleep faster and sleep deeper with our melatonin-infused patches",
     price: 16.99,
     badge: null,
     color: "bg-secondary",
@@ -34,8 +34,8 @@ const products = [
   },
   {
     id: 4,
-    name: "Party Prep",
-    description: "Your pre-game buddy for those big nights out",
+    name: "Pre-Workout Power",
+    description: "Your workout buddy that helps you crush your fitness goals",
     price: 15.99,
     badge: "Limited",
     color: "bg-accent",
@@ -50,11 +50,11 @@ const ProductShowcase = () => {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-3 flex items-center justify-center gap-2">
             <Star className="text-primary h-7 w-7 wiggle" /> 
-            <span>Shop Our Skin Patches</span> 
+            <span>Shop Our Wellness Patches</span> 
             <Star className="text-primary h-7 w-7 wiggle" />
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Find the perfect patch for whatever life throws at your skin
+            Feel-good patches for energy, sleep, focus, and more - all stored in our cute Super Nova box
           </p>
         </div>
         
@@ -68,13 +68,22 @@ const ProductShowcase = () => {
                 <div className={`absolute inset-0 ${product.color} ${product.special ? 'opacity-100' : 'opacity-70'} group-hover:opacity-90 transition-opacity`}></div>
                 <div className="absolute inset-0 flex items-center justify-center">
                   {product.special ? (
-                    <div className="text-center">
-                      <Star className="h-24 w-24 text-black mx-auto mb-4 bounce" />
+                    <div className="text-center relative">
+                      <div className="w-48 h-48 bg-primary rounded-xl mx-auto mb-6 shadow-lg bounce relative">
+                        <div className="absolute inset-2 bg-primary border-4 border-black rounded-lg flex items-center justify-center">
+                          <Star className="h-12 w-12 text-black wiggle" />
+                        </div>
+                        <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white border-2 border-black"></div>
+                        <div className="absolute -bottom-2 -left-2 w-6 h-6 rounded-full bg-white border-2 border-black"></div>
+                      </div>
                       <h2 className="text-4xl font-extrabold text-black wiggle">SUPER NOVA</h2>
+                      <p className="text-black font-bold">Pocket-Sized Patch Carrier</p>
                     </div>
                   ) : (
                     <div className={`w-24 h-24 rounded-full flex items-center justify-center text-white font-bold float`}>
-                      <Sparkles className="h-10 w-10" />
+                      {product.id === 2 && <Zap className="h-10 w-10" />}
+                      {product.id === 3 && <Moon className="h-10 w-10" />}
+                      {product.id === 4 && <Coffee className="h-10 w-10" />}
                     </div>
                   )}
                 </div>
