@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, Star, Heart, Coffee, Moon, Zap, Brain, Leaf, Dumbbell, IndianRupee } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 
 const products = [
   {
@@ -81,6 +82,8 @@ const products = [
 ];
 
 const Products = () => {
+  const { addToCart } = useCart();
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -139,7 +142,15 @@ const Products = () => {
                         <IndianRupee className="h-4 w-4 mr-1" />
                         <span className="font-bold text-lg">{product.price}</span>
                       </div>
-                      <Button size="sm" className="rounded-full">
+                      <Button 
+                        size="sm" 
+                        className="rounded-full"
+                        onClick={() => addToCart({
+                          id: product.id,
+                          name: product.name,
+                          price: product.price
+                        })}
+                      >
                         Add to Cart
                       </Button>
                     </div>

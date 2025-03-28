@@ -20,7 +20,7 @@ const About = () => {
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About NOVASKIN</h1>
             <p className="text-xl text-gray-600">
               We're on a mission to revolutionize wellness through innovative, 
-              effective, and easy-to-use transdermal patches.
+              transdermal patches that deliver benefits directly through your skin.
             </p>
           </div>
 
@@ -33,7 +33,7 @@ const About = () => {
                     <div className="w-40 h-40 rounded-full bg-white shadow-lg flex items-center justify-center">
                       <div className="text-center">
                         <p className="font-bold text-lg">Founded</p>
-                        <p className="text-3xl font-bold text-primary">2023</p>
+                        <p className="text-3xl font-bold text-primary">2025</p>
                       </div>
                     </div>
                     <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center">
@@ -46,8 +46,8 @@ const About = () => {
             <div className="w-full md:w-1/2">
               <h2 className="text-3xl font-bold mb-6">Our Story</h2>
               <p className="text-lg text-gray-600 mb-6">
-                NOVASKIN began with a simple observation: modern life demands modern solutions. In a world 
-                of pills, powders, and potions, we saw an opportunity to deliver wellness differently.
+                NOVASKIN began with a simple mission: making all things skin administered. In a world 
+                of pills, powders, and potions, we saw an opportunity to deliver wellness directly through your skin.
               </p>
               <p className="text-lg text-gray-600 mb-6">
                 Our founder, a biochemist with a background in transdermal delivery systems, teamed up with 
@@ -58,7 +58,7 @@ const About = () => {
               <p className="text-lg text-gray-600">
                 Today, we're proud to offer a diverse range of patches for energy, sleep, focus, and more – 
                 each designed with care, backed by science, and tested thoroughly to ensure they deliver 
-                on their promises.
+                on their promises of effective transdermal delivery.
               </p>
             </div>
           </div>
@@ -104,9 +104,13 @@ const About = () => {
           <div className="bg-primary/10 rounded-2xl p-12 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-4">Join the NOVASKIN Family</h2>
             <p className="text-lg text-gray-600 mb-6">
-              Experience the difference our innovative patches can make in your daily life.
+              Experience the difference our innovative transdermal patches can make in your daily life.
             </p>
-            <Button size="lg" className="rounded-full">
+            <Button 
+              size="lg" 
+              className="rounded-full"
+              onClick={() => window.location.href = "/products"}
+            >
               Shop Our Products
             </Button>
           </div>

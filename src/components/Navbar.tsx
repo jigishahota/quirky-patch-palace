@@ -3,9 +3,11 @@ import { Button } from "@/components/ui/button";
 import { ShoppingBag, Menu, X, Star } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useCart } from "@/context/CartContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { totalItems } = useCart();
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white border-b">
@@ -32,7 +34,7 @@ const Navbar = () => {
           <Link to="/faq" className="font-semibold hover:text-primary transition-colors">FAQ</Link>
           <Button size="sm" className="gap-2 rounded-full bg-black text-white hover:bg-gray-800">
             <ShoppingBag size={16} />
-            Cart (0)
+            Cart ({totalItems})
           </Button>
         </div>
 
@@ -44,7 +46,7 @@ const Navbar = () => {
             <Link to="/faq" className="font-semibold py-2 hover:text-primary transition-colors">FAQ</Link>
             <Button size="sm" className="gap-2 rounded-full bg-black text-white hover:bg-gray-800">
               <ShoppingBag size={16} />
-              Cart (0)
+              Cart ({totalItems})
             </Button>
           </div>
         )}

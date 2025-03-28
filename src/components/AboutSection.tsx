@@ -26,7 +26,7 @@ const AboutSection = () => {
               
               <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white rounded-full shadow-lg flex items-center justify-center pulse">
                 <div className="text-center px-4">
-                  <h3 className="font-bold text-xl mb-1">est. 2023</h3>
+                  <h3 className="font-bold text-xl mb-1">est. 2025</h3>
                   <p className="text-sm text-gray-600">Making life patch-tastic</p>
                 </div>
               </div>
@@ -38,10 +38,10 @@ const AboutSection = () => {
               The Story Behind <br/><span className="text-primary">NOVASKIN</span>
             </h2>
             <p className="text-lg mb-4 text-gray-700">
-              We started with a simple idea: wellness should be fun, effective, and a little bit quirky. Because let's face it, life's too short for boring self-care.
+              We started with a simple mission: NOVASKIN - making all things skin administered. Our innovative patches deliver wellness through your skin.
             </p>
             <p className="text-lg mb-6 text-gray-700">
-              Our team of patch enthusiasts (yes, that's a thing) works tirelessly to create patches that not only look adorable but actually deliver real benefits. Each patch is crafted with love, science, and a dash of sparkle.
+              Our team of patch enthusiasts works tirelessly to create transdermal patches that not only look adorable but actually deliver real benefits through skin absorption. Each patch is crafted with love, science, and a dash of sparkle.
             </p>
             <Button size="lg" className="rounded-full text-lg gap-2">
               Our Story <Star size={16} />

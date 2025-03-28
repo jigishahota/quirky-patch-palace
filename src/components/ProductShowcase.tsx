@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, Star, Heart, Coffee, Moon, Zap, IndianRupee, Brain, Leaf, Dumbbell } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useCart } from "@/context/CartContext";
 
 const products = [
   {
@@ -85,6 +86,8 @@ const products = [
 ];
 
 const ProductShowcase = () => {
+  const { addToCart } = useCart();
+
   return (
     <section className="py-16 md:py-24 bg-quirky-gradient-2">
       <div className="container px-4 mx-auto">
@@ -138,7 +141,15 @@ const ProductShowcase = () => {
                     <IndianRupee className="h-4 w-4 mr-1" />
                     {product.price}
                   </span>
-                  <Button size="sm" className={`rounded-full ${product.special ? 'bg-black text-white hover:bg-gray-800' : ''}`}>
+                  <Button 
+                    size="sm" 
+                    className={`rounded-full ${product.special ? 'bg-black text-white hover:bg-gray-800' : ''}`}
+                    onClick={() => addToCart({
+                      id: product.id,
+                      name: product.name,
+                      price: product.price
+                    })}
+                  >
                     Add to Cart
                   </Button>
                 </div>
