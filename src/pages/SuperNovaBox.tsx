@@ -1,19 +1,60 @@
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Check, IndianRupee, Sparkles, Box } from "lucide-react";
+import { Check, IndianRupee, Sparkles, Box, Zap, Moon, Coffee, Brain } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { Link } from "react-router-dom";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+
+const patches = [
+  {
+    id: 1,
+    name: "B12 Boost",
+    description: "Keeps you energized all day long",
+    icon: <Zap className="h-8 w-8 text-[#9B7EDD]" />
+  },
+  {
+    id: 2,
+    name: "Dream Catcher",
+    description: "Fall asleep faster and sleep deeper",
+    icon: <Moon className="h-8 w-8 text-secondary" />
+  },
+  {
+    id: 3,
+    name: "Caffeine Kick",
+    description: "Clean energy without the jitters",
+    icon: <Coffee className="h-8 w-8 text-accent" />
+  },
+  {
+    id: 4,
+    name: "Focus Formula",
+    description: "Enhance mental clarity and concentration",
+    icon: <Brain className="h-8 w-8 text-[#64B5F6]" />
+  }
+];
 
 const SuperNovaBox = () => {
   const { addToCart } = useCart();
+  const [selectedPatches, setSelectedPatches] = useState<number[]>([1, 2, 3, 4]);
   
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
+  const togglePatch = (patchId: number) => {
+    setSelectedPatches(prev => {
+      if (prev.includes(patchId)) {
+        if (prev.length <= 1) return prev; // Don't allow removing if only 1 patch selected
+        return prev.filter(id => id !== patchId);
+      } else {
+        if (prev.length >= 4) return prev; // Don't allow more than 4 patches
+        return [...prev, patchId];
+      }
+    });
+  };
 
   return (
     <div className="min-h-screen">
@@ -82,6 +123,67 @@ const SuperNovaBox = () => {
                     </div>
                   </li>
                 </ul>
+                
+                <div className="mb-8">
+                  <h3 className="text-xl font-bold mb-4">Choose Your 4 Patches</h3>
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <Tabs defaultValue="patches" className="w-full">
+                      <TabsList className="grid w-full grid-cols-2 mb-4">
+                        <TabsTrigger value="patches">Select Patches</TabsTrigger>
+                        <TabsTrigger value="selected">Your Selection ({selectedPatches.length}/4)</TabsTrigger>
+                      </TabsList>
+                      <TabsContent value="patches" className="space-y-4">
+                        {patches.map(patch => (
+                          <div 
+                            key={patch.id}
+                            onClick={() => togglePatch(patch.id)}
+                            className={`p-4 rounded-lg border-2 cursor-pointer transition-all duration-200 flex items-center gap-4
+                              ${selectedPatches.includes(patch.id) 
+                                ? 'border-primary bg-primary/5' 
+                                : 'border-gray-200 hover:border-gray-300'}`}
+                          >
+                            <div className="flex-shrink-0">
+                              {patch.icon}
+                            </div>
+                            <div className="flex-grow">
+                              <h4 className="font-bold">{patch.name}</h4>
+                              <p className="text-sm text-gray-600">{patch.description}</p>
+                            </div>
+                            <div className="flex-shrink-0">
+                              {selectedPatches.includes(patch.id) && (
+                                <div className="bg-primary text-white rounded-full p-1">
+                                  <Check className="h-4 w-4" />
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        ))}
+                      </TabsContent>
+                      <TabsContent value="selected">
+                        <div className="space-y-4">
+                          {selectedPatches.length > 0 ? (
+                            selectedPatches.map(id => {
+                              const patch = patches.find(p => p.id === id);
+                              if (!patch) return null;
+                              return (
+                                <div key={patch.id} className="flex items-center gap-4 bg-white p-3 rounded-lg border">
+                                  {patch.icon}
+                                  <div>
+                                    <h4 className="font-bold">{patch.name}</h4>
+                                    <p className="text-sm text-gray-600">{patch.description}</p>
+                                  </div>
+                                </div>
+                              );
+                            })
+                          ) : (
+                            <p className="text-gray-500 text-center py-4">No patches selected. Please select at least 1 patch.</p>
+                          )}
+                        </div>
+                      </TabsContent>
+                    </Tabs>
+                  </div>
+                </div>
+                
                 <div className="bg-gray-50 p-6 rounded-lg mb-8">
                   <div className="flex justify-between items-center mb-2">
                     <h3 className="text-xl font-bold">Supernova</h3>
@@ -90,7 +192,7 @@ const SuperNovaBox = () => {
                       <span className="font-bold text-2xl">999</span>
                     </div>
                   </div>
-                  <p className="text-gray-600 mb-4">Comes with 4 sample star-shaped patches to get you started!</p>
+                  <p className="text-gray-600 mb-4">Comes with 4 patches of your choosing to get you started!</p>
                   <Button 
                     size="lg" 
                     className="w-full rounded-full"
