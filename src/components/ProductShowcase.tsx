@@ -7,7 +7,7 @@ import { Sparkles, Star, Heart, Coffee, Moon, Zap, IndianRupee, Brain, Leaf, Dum
 const products = [
   {
     id: 1,
-    name: "Super Nova Box",
+    name: "Supernova",
     description: "Our pocket-sized yellow box to store and carry your patches wherever life takes you!",
     price: 1599,
     badge: "Bestseller",
@@ -87,7 +87,7 @@ const ProductShowcase = () => {
             <Star className="text-primary h-7 w-7 wiggle" />
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Feel-good patches for energy, sleep, focus, and more - all stored in our cute Super Nova box
+            Feel-good patches for energy, sleep, focus, and more - all stored in our cute Supernova box
           </p>
         </div>
         
@@ -114,7 +114,7 @@ const ProductShowcase = () => {
                         <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-white border-2 border-black"></div>
                         <div className="absolute -bottom-2 -left-2 w-6 h-6 rounded-full bg-white border-2 border-black"></div>
                       </div>
-                      <h2 className="text-4xl font-extrabold text-black wiggle">SUPER NOVA</h2>
+                      <h2 className="text-4xl font-extrabold text-black wiggle">SUPERNOVA</h2>
                       <p className="text-black font-bold">Pocket-Sized Patch Carrier</p>
                     </div>
                   ) : (

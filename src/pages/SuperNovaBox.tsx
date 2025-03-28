@@ -21,7 +21,7 @@ const SuperNovaBox = () => {
               <Badge variant="outline" className="mb-4 text-base px-4 py-1 border-primary text-primary">
                 Premium Subscription
               </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">The Super Nova Box</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">The Supernova</h1>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Our signature monthly subscription delivers a curated selection of our best patches
                 right to your doorstep. Customize your box and save up to 25% compared to buying patches individually.

@@ -4,20 +4,20 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Alex T.",
-    comment: "These patches are literally life-changing! I use the energy one before my morning workout and I'm zooming all day.",
+    name: "Arjun T.",
+    comment: "Yaar, these patches are simply amazing! I use the energy one before my morning yoga and I feel active the whole day. Totally worth every rupee!",
     rating: 5,
     avatar: "A"
   },
   {
-    name: "Jamie L.",
-    comment: "I was skeptical at first, but the sleep patch knocked me out faster than my grandma's special tea. 10/10 would recommend!",
+    name: "Jaya P.",
+    comment: "I was a bit skeptical initially, but the sleep patch knocked me out faster than my grandmother's kadha. Absolutely brilliant product, no?",
     rating: 5,
     avatar: "J"
   },
   {
-    name: "Sam R.",
-    comment: "The calm patch has been my secret weapon during work presentations. My colleagues think I'm naturally zen now!",
+    name: "Sanjay R.",
+    comment: "The calm patch has been my secret weapon during office presentations. My colleagues think I'm naturally cool as a cucumber now!",
     rating: 4,
     avatar: "S"
   }

@@ -30,7 +30,7 @@ const products = [
   },
   {
     id: 3,
-    name: "Super Nova Box",
+    name: "Supernova",
     description: "Our premium monthly subscription with 30 patches of your choice",
     price: 3499,
     badge: "Best Value",
