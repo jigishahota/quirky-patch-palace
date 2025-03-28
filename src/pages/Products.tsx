@@ -208,7 +208,7 @@ const Products = () => {
                     {product.special ? (
                       <>
                         <img 
-                          src="/lovable-uploads/6fd8b100-c2ae-4c93-9d36-274245e8c805.png" 
+                          src="/lovable-uploads/1cceb897-3cf7-4446-8da8-c25b795d4935.png" 
                           alt="Supernova" 
                           className="h-56 object-contain"
                         />
