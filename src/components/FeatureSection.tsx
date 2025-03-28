@@ -5,23 +5,23 @@ import { Zap, Battery, Coffee, Moon } from "lucide-react";
 const features = [
   {
     icon: <Zap className="h-6 w-6 text-accent" />,
-    title: "Instant Effect",
-    description: "Our patches deliver a subtle but noticeable boost when you need it most, without the crash."
-  },
-  {
-    icon: <Battery className="h-6 w-6 text-secondary" />,
-    title: "All Day Energy",
-    description: "Our B12 patches keep you going from morning meetings to evening workouts."
+    title: "B12 Energy Boost",
+    description: "Vitamin B12 patches that give you natural, sustained energy throughout your day."
   },
   {
     icon: <Coffee className="h-6 w-6 text-primary" />,
-    title: "Better Than Coffee",
-    description: "Get your caffeine fix without the jitters or digestive issues. Clean energy all day."
+    title: "Caffeine Kick",
+    description: "A coffee alternative that delivers clean energy without the jitters or crashes."
   },
   {
     icon: <Moon className="h-6 w-6 text-[#9B7EDD]" />,
-    title: "Dream Team",
-    description: "Our sleep patches help you drift off to dreamland faster than counting sheep."
+    title: "Dream Catcher",
+    description: "Melatonin-infused patches to help you fall asleep faster and sleep deeper."
+  },
+  {
+    icon: <Battery className="h-6 w-6 text-secondary" />,
+    title: "Pocket-Sized",
+    description: "Our Super Nova box lets you carry your patches wherever you go for on-the-go wellness."
   }
 ];
 

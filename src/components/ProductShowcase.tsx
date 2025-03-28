@@ -21,6 +21,7 @@ const products = [
     price: 14.99,
     badge: "New",
     color: "bg-[#9B7EDD]",
+    icon: <Zap className="h-10 w-10" />,
     special: false
   },
   {
@@ -30,15 +31,17 @@ const products = [
     price: 16.99,
     badge: null,
     color: "bg-secondary",
+    icon: <Moon className="h-10 w-10" />,
     special: false
   },
   {
     id: 4,
-    name: "Pre-Workout Power",
-    description: "Your workout buddy that helps you crush your fitness goals",
+    name: "Caffeine Kick",
+    description: "Your coffee alternative - clean energy without the jitters or crashes",
     price: 15.99,
-    badge: "Limited",
+    badge: "Popular",
     color: "bg-accent",
+    icon: <Coffee className="h-10 w-10" />,
     special: false
   }
 ];
@@ -81,9 +84,7 @@ const ProductShowcase = () => {
                     </div>
                   ) : (
                     <div className={`w-24 h-24 rounded-full flex items-center justify-center text-white font-bold float`}>
-                      {product.id === 2 && <Zap className="h-10 w-10" />}
-                      {product.id === 3 && <Moon className="h-10 w-10" />}
-                      {product.id === 4 && <Coffee className="h-10 w-10" />}
+                      {product.icon}
                     </div>
                   )}
                 </div>
