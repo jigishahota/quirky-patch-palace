@@ -9,7 +9,7 @@ import { useCart } from "@/context/CartContext";
 const products = [
   {
     id: 1,
-    name: "Supernova Box",
+    name: "Supernova",
     description: "Our pocket-sized yellow box to store and carry your patches wherever life takes you!",
     price: 999,
     badge: "Bestseller",
@@ -98,7 +98,7 @@ const ProductShowcase = () => {
             <Star className="text-primary h-7 w-7 wiggle" />
           </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            Get our cute Supernova box and refill it with our wellness patches for energy, sleep, focus, and more
+            Get our cute Supernova and refill it with our wellness patches for energy, sleep, focus, and more
           </p>
         </div>
         
@@ -114,8 +114,8 @@ const ProductShowcase = () => {
                   {product.special ? (
                     <div className="text-center relative">
                       <img 
-                        src="/lovable-uploads/6fd8b100-c2ae-4c93-9d36-274245e8c805.png" 
-                        alt="Supernova Box" 
+                        src="/lovable-uploads/2d5ffb39-a182-49fe-805b-a9c7f6d443ac.png" 
+                        alt="Supernova" 
                         className="h-48 mx-auto mb-6 object-contain"
                       />
                       <h2 className="text-4xl font-extrabold text-black wiggle">SUPERNOVA</h2>

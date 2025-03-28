@@ -11,7 +11,7 @@ import { useCart } from "@/context/CartContext";
 const products = [
   {
     id: 1,
-    name: "Supernova Box",
+    name: "Supernova",
     description: "Our cute yellow storage box to carry and organize your patches wherever you go!",
     price: 999,
     badge: "Bestseller",
@@ -96,7 +96,7 @@ const Products = () => {
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Products</h1>
             <p className="text-lg text-gray-600">
-              Get our cute Supernova box to store and organize your patches, then refill it with 
+              Get our cute Supernova to store and organize your patches, then refill it with 
               our collection of innovative wellness patches designed to enhance your daily life.
             </p>
           </div>
@@ -109,8 +109,8 @@ const Products = () => {
                     {product.special ? (
                       <>
                         <img 
-                          src="/lovable-uploads/6fd8b100-c2ae-4c93-9d36-274245e8c805.png" 
-                          alt="Supernova Box" 
+                          src="/lovable-uploads/2d5ffb39-a182-49fe-805b-a9c7f6d443ac.png" 
+                          alt="Supernova" 
                           className="h-56 object-contain"
                         />
                         <div className="absolute top-4 right-4">

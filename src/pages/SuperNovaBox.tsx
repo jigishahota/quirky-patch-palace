@@ -24,7 +24,7 @@ const SuperNovaBox = () => {
               <Badge variant="outline" className="mb-4 text-base px-4 py-1 border-primary text-primary">
                 Featured Product
               </Badge>
-              <h1 className="text-4xl md:text-6xl font-bold mb-6">The Supernova Box</h1>
+              <h1 className="text-4xl md:text-6xl font-bold mb-6">The Supernova</h1>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Our adorable yellow storage box keeps your patches organized and protected wherever you go.
                 Get started with a box and refill with your favorite patches!
@@ -35,8 +35,8 @@ const SuperNovaBox = () => {
               <div className="w-full md:w-1/2">
                 <div className="bg-yellow-100 rounded-2xl p-8 flex items-center justify-center h-full">
                   <img 
-                    src="/lovable-uploads/6fd8b100-c2ae-4c93-9d36-274245e8c805.png" 
-                    alt="Supernova Box" 
+                    src="/lovable-uploads/2d5ffb39-a182-49fe-805b-a9c7f6d443ac.png" 
+                    alt="Supernova" 
                     className="max-w-full max-h-96 object-contain"
                   />
                 </div>
@@ -83,7 +83,7 @@ const SuperNovaBox = () => {
                 </ul>
                 <div className="bg-gray-50 p-6 rounded-lg mb-8">
                   <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-xl font-bold">Supernova Box</h3>
+                    <h3 className="text-xl font-bold">Supernova</h3>
                     <div className="flex items-center">
                       <IndianRupee className="h-4 w-4 mr-1" />
                       <span className="font-bold text-2xl">999</span>
@@ -95,7 +95,7 @@ const SuperNovaBox = () => {
                     className="w-full rounded-full"
                     onClick={() => addToCart({
                       id: 1,
-                      name: "Supernova Box",
+                      name: "Supernova",
                       price: 999
                     })}
                   >
@@ -108,7 +108,7 @@ const SuperNovaBox = () => {
                     <Sparkles className="h-5 w-5" /> Refill with Your Favorite Patches
                   </h3>
                   <p className="text-gray-700 mb-4">
-                    After getting your Supernova box, check out our collection of refill patches for energy, sleep, focus, and more!
+                    After getting your Supernova, check out our collection of refill patches for energy, sleep, focus, and more!
                   </p>
                   <Button 
                     variant="outline" 
