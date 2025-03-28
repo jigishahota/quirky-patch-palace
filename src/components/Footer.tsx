@@ -1,6 +1,6 @@
 
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Twitter, Heart } from "lucide-react";
+import { Instagram, Facebook, Twitter, Heart, Star } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -9,10 +9,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-4">
-              <div className="h-10 w-10 bg-primary rounded-full flex items-center justify-center">
-                <span className="text-white font-bold text-xl">P</span>
+              <div className="h-10 w-8 bg-primary rounded-sm flex items-center justify-center">
+                <div className="text-black font-extrabold text-xl rotate-90 tracking-tighter flex items-center">
+                  NOVA
+                  <Star className="h-3 w-3 ml-0.5" />
+                </div>
               </div>
-              <span className="font-bold text-xl">PatchPal</span>
+              <span className="font-bold text-xl tracking-tight">NOVASKIN</span>
             </Link>
             <p className="text-gray-600 mb-4">
               Making life a little more patchy, one sticky situation at a time.
@@ -63,7 +66,7 @@ const Footer = () => {
         
         <div className="border-t mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} PatchPal. All rights reserved.
+            © {new Date().getFullYear()} NOVASKIN. All rights reserved.
           </p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link to="/privacy" className="text-gray-500 hover:text-primary text-sm transition-colors">Privacy Policy</Link>
@@ -73,7 +76,7 @@ const Footer = () => {
         </div>
         
         <div className="text-center mt-8 text-sm text-gray-400 flex items-center justify-center gap-1">
-          Made with <Heart className="h-3 w-3 text-accent" /> by PatchPal Team
+          Made with <Heart className="h-3 w-3 text-accent" /> by NOVASKIN Team
         </div>
       </div>
     </footer>

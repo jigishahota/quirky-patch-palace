@@ -35,7 +35,7 @@ const AboutSection = () => {
           
           <div className="w-full md:w-1/2 text-center md:text-left">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              The Story Behind <br/><span className="text-primary">PatchPal</span>
+              The Story Behind <br/><span className="text-primary">NOVASKIN</span>
             </h2>
             <p className="text-lg mb-4 text-gray-700">
               We started with a simple idea: wellness should be fun, effective, and a little bit quirky. Because let's face it, life's too short for boring self-care.

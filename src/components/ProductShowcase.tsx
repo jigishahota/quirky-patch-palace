@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Sparkles, Star, Heart, Coffee, Moon, Zap, IndianRupee } from "lucide-react";
+import { Sparkles, Star, Heart, Coffee, Moon, Zap, IndianRupee, Brain, Leaf, Dumbbell, Focus } from "lucide-react";
 
 const products = [
   {
@@ -42,6 +42,36 @@ const products = [
     badge: "Popular",
     color: "bg-accent",
     icon: <Coffee className="h-10 w-10" />,
+    special: false
+  },
+  {
+    id: 5,
+    name: "Focus Formula",
+    description: "Stay concentrated and enhance mental clarity with our nootropic patches",
+    price: 1399,
+    badge: "New",
+    color: "bg-[#64B5F6]",
+    icon: <Brain className="h-10 w-10" />,
+    special: false
+  },
+  {
+    id: 6,
+    name: "Pre-Workout Power",
+    description: "Get pumped for your workout with our energy-boosting fitness patches",
+    price: 1499,
+    badge: "For Athletes",
+    color: "bg-[#FF5252]",
+    icon: <Dumbbell className="h-10 w-10" />,
+    special: false
+  },
+  {
+    id: 7,
+    name: "Chill Pill",
+    description: "De-stress and find your calm with our anxiety-reducing patches",
+    price: 1299,
+    badge: null,
+    color: "bg-[#81C784]",
+    icon: <Leaf className="h-10 w-10" />,
     special: false
   }
 ];
