@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, IndianRupee, Sparkles, Box } from "lucide-react";
 import { useCart } from "@/context/CartContext";
+import { Link } from "react-router-dom";
 
 const SuperNovaBox = () => {
   const { addToCart } = useCart();
@@ -35,7 +36,7 @@ const SuperNovaBox = () => {
               <div className="w-full md:w-1/2">
                 <div className="bg-yellow-100 rounded-2xl p-8 flex items-center justify-center h-full">
                   <img 
-                    src="/lovable-uploads/2d5ffb39-a182-49fe-805b-a9c7f6d443ac.png" 
+                    src="/lovable-uploads/6fd8b100-c2ae-4c93-9d36-274245e8c805.png" 
                     alt="Supernova" 
                     className="max-w-full max-h-96 object-contain"
                   />
@@ -110,13 +111,14 @@ const SuperNovaBox = () => {
                   <p className="text-gray-700 mb-4">
                     After getting your Supernova, check out our collection of refill patches for energy, sleep, focus, and more!
                   </p>
-                  <Button 
-                    variant="outline" 
-                    className="w-full rounded-full border-black hover:bg-black hover:text-white"
-                    onClick={() => window.location.href = "/products"}
-                  >
-                    Browse Patch Refills
-                  </Button>
+                  <Link to="/products">
+                    <Button 
+                      variant="outline" 
+                      className="w-full rounded-full border-black hover:bg-black hover:text-white"
+                    >
+                      Browse Patch Refills
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

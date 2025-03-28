@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Sparkles, Star, Heart, Coffee, Moon, Zap, IndianRupee, Brain, Leaf, Dumbbell } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "@/context/CartContext";
 
 const products = [
@@ -87,6 +87,11 @@ const products = [
 
 const ProductShowcase = () => {
   const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleCardClick = (path: string) => {
+    navigate(path);
+  };
 
   return (
     <section className="py-16 md:py-24 bg-quirky-gradient-2">
@@ -106,7 +111,8 @@ const ProductShowcase = () => {
           {products.map((product) => (
             <Card 
               key={product.id} 
-              className={`overflow-hidden group hover:shadow-lg transition-all duration-300 border-4 ${product.special ? 'border-primary col-span-1 sm:col-span-2 lg:col-span-2 row-span-2' : 'border-transparent'}`}
+              className={`overflow-hidden group hover:shadow-lg transition-all duration-300 border-4 cursor-pointer ${product.special ? 'border-primary col-span-1 sm:col-span-2 lg:col-span-2 row-span-2' : 'border-transparent'}`}
+              onClick={() => handleCardClick(product.path)}
             >
               <div className={`${product.special ? 'aspect-square sm:aspect-auto sm:h-80' : 'aspect-square'} relative overflow-hidden`}>
                 <div className={`absolute inset-0 ${product.color} ${product.special ? 'opacity-100' : 'opacity-70'} group-hover:opacity-90 transition-opacity`}></div>
@@ -114,7 +120,7 @@ const ProductShowcase = () => {
                   {product.special ? (
                     <div className="text-center relative">
                       <img 
-                        src="/lovable-uploads/2d5ffb39-a182-49fe-805b-a9c7f6d443ac.png" 
+                        src="/lovable-uploads/6fd8b100-c2ae-4c93-9d36-274245e8c805.png" 
                         alt="Supernova" 
                         className="h-48 mx-auto mb-6 object-contain"
                       />
@@ -144,11 +150,14 @@ const ProductShowcase = () => {
                   <Button 
                     size="sm" 
                     className={`rounded-full ${product.special ? 'bg-black text-white hover:bg-gray-800' : ''}`}
-                    onClick={() => addToCart({
-                      id: product.id,
-                      name: product.name,
-                      price: product.price
-                    })}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      addToCart({
+                        id: product.id,
+                        name: product.name,
+                        price: product.price
+                      });
+                    }}
                   >
                     Add to Cart
                   </Button>
