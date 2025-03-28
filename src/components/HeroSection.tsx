@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Sparkles } from "lucide-react";
+import { ArrowRight, Star, Sparkles, Square } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -29,13 +29,24 @@ const HeroSection = () => {
           </div>
           <div className="w-full md:w-1/2 relative">
             <div className="relative aspect-square max-w-md mx-auto">
+              {/* Custom Supernova Box graphic with star and square patches */}
               <div className="absolute inset-0 rounded-full bg-black/5 animate-spin-slow"></div>
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5/6 h-5/6 rounded-full bg-white shadow-xl overflow-hidden flex items-center justify-center bounce">
-                <div className="absolute inset-0 bg-primary/10 rounded-full"></div>
-                <div className="w-5/6 h-5/6 rounded-full bg-primary/20 flex items-center justify-center">
-                  <div className="w-4/5 h-4/5 rounded-full bg-primary flex items-center justify-center pulse">
-                    <Star className="w-1/2 h-1/2 text-black wiggle" />
-                  </div>
+              
+              {/* Yellow box container */}
+              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5/6 h-5/6 bg-primary rounded-xl shadow-xl overflow-hidden flex items-center justify-center bounce">
+                {/* Box interior with star in the middle */}
+                <div className="relative w-full h-full p-6 flex items-center justify-center">
+                  {/* Center star */}
+                  <Star className="w-16 h-16 text-black absolute z-10 wiggle" />
+                  
+                  {/* Square patches inside the box */}
+                  <Square className="w-10 h-10 absolute top-6 left-6 text-white/80 rotate-12" />
+                  <Square className="w-8 h-8 absolute top-10 right-10 text-white/80 -rotate-6" />
+                  <Square className="w-9 h-9 absolute bottom-8 left-12 text-white/80 rotate-45" />
+                  <Square className="w-7 h-7 absolute bottom-10 right-8 text-white/80 -rotate-12" />
+                  
+                  {/* Box lid reflection */}
+                  <div className="absolute top-0 left-0 right-0 h-1/5 bg-white/20 transform -skew-x-12"></div>
                 </div>
               </div>
             </div>
