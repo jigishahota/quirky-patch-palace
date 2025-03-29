@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patch Selector</title>
+  <link rel="stylesheet" href="PatchSelector.css">
+</head>
+<body>
+  <div class="patch-selector mb-6">
+    <div class="w-full space-y-2">
+      <div class="flex items-center justify-between">
+        <h3 class="text-xl font-bold">Selected Patches (<span id="selected-count">0</span>/4)</h3>
+        <button 
+          class="rounded-md border p-2 hover:bg-gray-100" 
+          id="toggle-patch-selector"
+          aria-label="Toggle patch selector"
+        >
+          <div class="h-4 w-4 transition-transform" id="toggle-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </div>
+        </button>
+      </div>
+      
+      <div id="patch-selector-content" class="hidden">
+        <div class="bg-gray-50 p-4 rounded-lg mt-2">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4" id="selected-patches-container">
+            <!-- Selected patches will be dynamically inserted here -->
+            <p class="text-gray-500 text-center py-2 col-span-2" id="no-patches-message">No patches selected. Please select at least 1 patch.</p>
+          </div>
+          
+          <h4 class="font-semibold mb-2">Add Patches:</h4>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3" id="available-patches-container">
+            <!-- Available patches will be dynamically inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="PatchSelector.js"></script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperNova Box</title>
+  <link rel="stylesheet" href="../../index.css">
+  <link rel="stylesheet" href="PatchSelector.css">
+</head>
+<body>
+  <div class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl font-bold mb-8 text-center">SuperNova Box</h1>
+    
+    <!-- Include the PatchSelector component -->
+    <div id="patch-selector-container"></div>
+    
+    <div class="mt-8 text-center">
+      <button class="bg-primary text-black font-bold py-2 px-6 rounded-full">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+
+  <script>
+    // Load the PatchSelector component
+    fetch('PatchSelector.html')
+      .then(response => response.text())
+      .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const patchSelector = doc.querySelector('.patch-selector');
+        document.getElementById('patch-selector-container').appendChild(patchSelector);
+        
+        // Load and execute the JavaScript
+        const script = document.createElement('script');
+        script.src = 'PatchSelector.js';
+        document.body.appendChild(script);
+      });
+  </script>
+</body>
+</html>
