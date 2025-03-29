@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - NOVASKIN</title>
+  <link rel="stylesheet" href="src/index.css">
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+    
+    <!-- Main Content -->
+    <div class="pt-24 pb-16">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <h1 class="text-4xl font-bold mb-8">All Products</h1>
+        
+        <div class="bg-white p-8 rounded-lg text-center mb-12">
+          <p class="text-2xl">This page is under construction. Please check back soon!</p>
+          <p class="mt-4">In the meantime, check out our featured product:</p>
+          <a href="/super-nova-box.html" class="inline-block mt-4">
+            <button class="rounded-full py-2 px-6 bg-primary text-black hover:bg-primary/90">
+              View Supernova Box
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <div id="footer-container"></div>
+  </div>
+
+  <!-- Cart notification -->
+  <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
+
+  <script>
+    // Load components
+    const components = [
+      { id: 'navbar-container', file: 'src/components/Navbar.html' },
+      { id: 'footer-container', file: 'src/components/Footer.html' }
+    ];
+
+    // Helper function to load component HTML
+    async function loadComponent(component) {
+      try {
+        const response = await fetch(component.file);
+        if (!response.ok) throw new Error(`Failed to load ${component.file}`);
+        const html = await response.text();
+        
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const componentEl = doc.body.firstElementChild || doc.body;
+        document.getElementById(component.id).appendChild(componentEl);
+        
+        const jsFile = component.file.replace('.html', '.js');
+        const scriptEl = document.createElement('script');
+        scriptEl.src = jsFile;
+        document.body.appendChild(scriptEl);
+      } catch (error) {
+        console.error(`Error loading component ${component.file}:`, error);
+      }
+    }
+
+    // Load all components
+    Promise.all(components.map(loadComponent))
+      .then(() => {
+        console.log('All components loaded');
+        
+        // Initialize cart if not already initialized
+        if (!window.cart) {
+          // Cart initialization code
+          // ... (same as in index.html)
+        }
+      })
+      .catch(err => {
+        console.error('Error loading components:', err);
+      });
+  </script>
+</body>
+</html>

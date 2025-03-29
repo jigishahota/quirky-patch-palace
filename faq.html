@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - NOVASKIN</title>
+  <link rel="stylesheet" href="src/index.css">
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  <style>
+    .accordion-item {
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .accordion-trigger {
+      width: 100%;
+      text-align: left;
+      padding: 1rem 0;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .accordion-content {
+      padding-bottom: 1.5rem;
+      display: none;
+    }
+    .accordion-content.active {
+      display: block;
+    }
+    .accordion-icon {
+      transition: transform 0.2s;
+    }
+    .accordion-icon.active {
+      transform: rotate(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+    
+    <!-- Main Content -->
+    <div class="pt-24 pb-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <div class="text-center mb-12">
+            <h1 class="text-4xl font-bold mb-4">Frequently Asked Questions</h1>
+            <p class="text-lg text-gray-600">
+              Find answers to the most common questions about our products and services.
+            </p>
+          </div>
+
+          <div class="w-full" id="faq-accordion">
+            <!-- FAQ items will be dynamically generated -->
+          </div>
+
+          <div class="mt-12 p-6 bg-gray-50 rounded-lg text-center">
+            <h2 class="text-xl font-bold mb-2">Still have questions?</h2>
+            <p class="text-gray-600 mb-4">Our customer support team is here to help.</p>
+            <a 
+              href="mailto:support@novaskin.com" 
+              class="text-primary hover:text-primary/80 font-medium"
+            >
+              support@novaskin.com
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <div id="footer-container"></div>
+  </div>
+
+  <!-- Cart notification -->
+  <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
+
+  <script>
+    // FAQ data
+    const faqItems = [
+      {
+        question: "How do NOVASKIN patches work?",
+        answer: "Our patches work through transdermal delivery, which means the active ingredients are absorbed through your skin and into your bloodstream. This provides a steady, consistent release of the active ingredients over several hours, unlike pills or drinks that have sharp peaks and drops in effectiveness."
+      },
+      {
+        question: "Are the patches safe to use?",
+        answer: "Yes, our patches are thoroughly tested and made from high-quality, hypoallergenic materials. The ingredients we use are carefully selected and tested for safety and efficacy. However, if you have sensitive skin or specific allergies, we recommend checking the ingredients list or consulting with a healthcare professional."
+      },
+      {
+        question: "How long should I wear each patch?",
+        answer: "Most of our patches are designed to be worn for 8-12 hours, depending on the specific product. Each product package includes detailed instructions for optimal use. Generally, we recommend applying patches to clean, dry skin and removing them after the recommended time period."
+      },
+      {
+        question: "Can I wear multiple patches at once?",
+        answer: "Yes, our patches can be worn simultaneously, but we recommend not wearing more than two different types at once. Also, be mindful of the total amount of active ingredients you're absorbing and follow the recommended usage instructions for each patch."
+      },
+      {
+        question: "Where should I apply the patches?",
+        answer: "Our patches can be applied to most areas with thin skin where blood vessels are close to the surface, such as the inside of your wrist, upper arm, or behind the ear. Detailed application instructions are included with each product."
+      },
+      {
+        question: "Are the patches waterproof?",
+        answer: "Our patches are water-resistant but not completely waterproof. They can withstand light exposure to water, such as washing hands or a quick shower, but prolonged exposure to water may reduce their effectiveness."
+      },
+      {
+        question: "How quickly will I feel the effects?",
+        answer: "The onset of effects varies by product and individual. Some users report feeling effects within 30 minutes, while others may take longer. Consistent use over time typically yields the best results."
+      },
+      {
+        question: "Do you ship internationally?",
+        answer: "Yes, we ship to most countries worldwide. Shipping times and fees vary depending on location. You can calculate shipping costs at checkout before finalizing your purchase."
+      },
+      {
+        question: "What is your return policy?",
+        answer: "We offer a 30-day satisfaction guarantee. If you're not happy with your purchase for any reason, please contact our customer service team, and we'll help you with a replacement or refund."
+      },
+      {
+        question: "Is the Super Nova Box subscription flexible?",
+        answer: "Absolutely! You can customize your box contents each month, skip a delivery, or cancel your subscription at any time. Changes to your next box must be made at least 5 days before your scheduled billing date."
+      }
+    ];
+
+    // Load components
+    const components = [
+      { id: 'navbar-container', file: 'src/components/Navbar.html' },
+      { id: 'footer-container', file: 'src/components/Footer.html' }
+    ];
+
+    // Helper function to load component HTML
+    async function loadComponent(component) {
+      try {
+        const response = await fetch(component.file);
+        if (!response.ok) throw new Error(`Failed to load ${component.file}`);
+        const html = await response.text();
+        
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const componentEl = doc.body.firstElementChild || doc.body;
+        document.getElementById(component.id).appendChild(componentEl);
+        
+        const jsFile = component.file.replace('.html', '.js');
+        const scriptEl = document.createElement('script');
+        scriptEl.src = jsFile;
+        document.body.appendChild(scriptEl);
+      } catch (error) {
+        console.error(`Error loading component ${component.file}:`, error);
+      }
+    }
+
+    // Load all components
+    Promise.all(components.map(loadComponent))
+      .then(() => {
+        console.log('All components loaded');
+        
+        // Initialize FAQ accordion
+        initFaqAccordion();
+        
+        // Initialize cart if not already initialized
+        if (!window.cart) {
+          // Cart initialization code
+          // ... (same as in index.html)
+        }
+      })
+      .catch(err => {
+        console.error('Error loading components:', err);
+      });
+      
+    // Initialize FAQ accordion
+    function initFaqAccordion() {
+      const accordionContainer = document.getElementById('faq-accordion');
+      
+      faqItems.forEach((item, index) => {
+        const accordionItem = document.createElement('div');
+        accordionItem.className = 'accordion-item';
+        accordionItem.innerHTML = `
+          <button class="accordion-trigger text-lg font-medium py-4" data-index="${index}">
+            ${item.question}
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="accordion-icon">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </button>
+          <div class="accordion-content text-gray-600 pb-4">
+            ${item.answer}
+          </div>
+        `;
+        
+        accordionContainer.appendChild(accordionItem);
+      });
+      
+      // Add click event listeners to accordion triggers
+      document.querySelectorAll('.accordion-trigger').forEach(trigger => {
+        trigger.addEventListener('click', function() {
+          const content = this.nextElementSibling;
+          const icon = this.querySelector('.accordion-icon');
+          
+          // Toggle active class on content
+          content.classList.toggle('active');
+          
+          // Toggle active class on icon
+          icon.classList.toggle('active');
+        });
+      });
+    }
+  </script>
+</body>
+</html>

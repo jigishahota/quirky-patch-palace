@@ -1,26 +1,198 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>quirky-patch-palace</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVASKIN</title>
+  <link rel="stylesheet" href="src/index.css">
+  <link rel="stylesheet" href="src/components/SuperNovaBox/PatchSelector.css">
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+</head>
+<body>
+  <div id="app">
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+    
+    <!-- Main Content -->
+    <div id="main-content">
+      <!-- Hero Section -->
+      <div id="hero-section-container"></div>
+      
+      <!-- Feature Section -->
+      <div id="feature-section-container"></div>
+      
+      <!-- Product Showcase -->
+      <div id="product-showcase-container"></div>
+      
+      <!-- About Section -->
+      <div id="about-section-container"></div>
+      
+      <!-- Testimonial Section -->
+      <div id="testimonial-section-container"></div>
+      
+      <!-- Newsletter Section -->
+      <div id="newsletter-section-container"></div>
+    </div>
+    
+    <!-- Footer -->
+    <div id="footer-container"></div>
+  </div>
 
-    <meta property="og:title" content="Lovable Generated Project" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <!-- Cart notification -->
+  <div id="toast-container" class="fixed top-4 right-4 z-50"></div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+  <script>
+    // Load all components
+    const components = [
+      { id: 'navbar-container', file: 'src/components/Navbar.html' },
+      { id: 'hero-section-container', file: 'src/components/HeroSection.html' },
+      { id: 'feature-section-container', file: 'src/components/FeatureSection.html' },
+      { id: 'product-showcase-container', file: 'src/components/ProductShowcase.html' },
+      { id: 'about-section-container', file: 'src/components/AboutSection.html' },
+      { id: 'testimonial-section-container', file: 'src/components/TestimonialSection.html' },
+      { id: 'newsletter-section-container', file: 'src/components/NewsletterSection.html' },
+      { id: 'footer-container', file: 'src/components/Footer.html' }
+    ];
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    // Helper function to load component HTML
+    async function loadComponent(component) {
+      try {
+        const response = await fetch(component.file);
+        if (!response.ok) throw new Error(`Failed to load ${component.file}`);
+        const html = await response.text();
+        
+        // Create parser and extract HTML
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        
+        // Find the component content - first child of body or the whole body content
+        const componentEl = doc.body.firstElementChild || doc.body;
+        
+        // Add it to the container
+        document.getElementById(component.id).appendChild(componentEl);
+        
+        // If there's a matching JS file, load it
+        const jsFile = component.file.replace('.html', '.js');
+        const scriptEl = document.createElement('script');
+        scriptEl.src = jsFile;
+        document.body.appendChild(scriptEl);
+      } catch (error) {
+        console.error(`Error loading component ${component.file}:`, error);
+      }
+    }
+
+    // Load all components
+    Promise.all(components.map(loadComponent))
+      .then(() => {
+        console.log('All components loaded');
+        
+        // Initialize cart
+        initializeCart();
+      })
+      .catch(err => {
+        console.error('Error loading components:', err);
+      });
+
+    // Load cart functionality
+    function initializeCart() {
+      // Create a simple cart system
+      window.cart = {
+        items: JSON.parse(localStorage.getItem('cart') || '[]'),
+        
+        addToCart: function(product) {
+          const existingItem = this.items.find(item => item.id === product.id);
+          
+          if (existingItem) {
+            existingItem.quantity += 1;
+            this.showToast(`${product.name} quantity updated in your cart.`);
+          } else {
+            this.items.push({ ...product, quantity: 1 });
+            this.showToast(`${product.name} added to your cart.`);
+          }
+          
+          this.saveCart();
+          this.updateCartCount();
+        },
+        
+        removeFromCart: function(id) {
+          const itemToRemove = this.items.find(item => item.id === id);
+          if (itemToRemove) {
+            this.items = this.items.filter(item => item.id !== id);
+            this.showToast(`${itemToRemove.name} removed from your cart.`);
+            this.saveCart();
+            this.updateCartCount();
+          }
+        },
+        
+        updateQuantity: function(id, quantity) {
+          if (quantity < 1) return;
+          
+          const item = this.items.find(item => item.id === id);
+          if (item) {
+            item.quantity = quantity;
+            this.saveCart();
+            this.updateCartCount();
+          }
+        },
+        
+        clearCart: function() {
+          this.items = [];
+          this.showToast('All items have been removed from your cart.');
+          this.saveCart();
+          this.updateCartCount();
+        },
+        
+        getTotalItems: function() {
+          return this.items.reduce((sum, item) => sum + item.quantity, 0);
+        },
+        
+        getTotalPrice: function() {
+          return this.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+        },
+        
+        saveCart: function() {
+          localStorage.setItem('cart', JSON.stringify(this.items));
+        },
+        
+        updateCartCount: function() {
+          // Update all cart count elements
+          const cartCountElements = document.querySelectorAll('.cart-count');
+          const totalItems = this.getTotalItems();
+          
+          cartCountElements.forEach(el => {
+            el.textContent = totalItems;
+          });
+        },
+        
+        showToast: function(message) {
+          const toastContainer = document.getElementById('toast-container');
+          const toast = document.createElement('div');
+          toast.className = 'bg-white shadow-lg rounded-lg p-4 mb-3 flex items-center transition-opacity duration-500';
+          toast.innerHTML = `
+            <div class="mr-2 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+            </div>
+            <div>${message}</div>
+          `;
+          
+          toastContainer.appendChild(toast);
+          
+          // Remove toast after 3 seconds
+          setTimeout(() => {
+            toast.style.opacity = '0';
+            setTimeout(() => {
+              toastContainer.removeChild(toast);
+            }, 500);
+          }, 3000);
+        }
+      };
+      
+      // Initialize cart count
+      window.cart.updateCartCount();
+    }
+  </script>
+</body>
 </html>
