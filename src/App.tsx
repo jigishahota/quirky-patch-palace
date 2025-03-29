@@ -18,30 +18,32 @@ import Cart from "./pages/Cart";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
       <CartProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/super-nova-box" element={<SuperNovaBox />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/terms" element={<Terms />} />
-            <Route path="/accessibility" element={<Accessibility />} />
-            <Route path="/cart" element={<Cart />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/super-nova-box" element={<SuperNovaBox />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/terms" element={<Terms />} />
+              <Route path="/accessibility" element={<Accessibility />} />
+              <Route path="/cart" element={<Cart />} />
+              {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
       </CartProvider>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+    </QueryClientProvider>
+  );
+};
 
 export default App;
