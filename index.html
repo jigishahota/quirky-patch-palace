@@ -1,26 +1,407 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>quirky-patch-palace</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVASKIN - Wellness Patches</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">
+          <i class="fas fa-star"></i>
+        </div>
+        <span>NOVASKIN</span>
+      </a>
 
-    <meta property="og:title" content="Lovable Generated Project" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+      <div class="mobile-menu-button">
+        <i class="fas fa-bars"></i>
+      </div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+      <div class="nav-links">
+        <a href="products.html">Patches</a>
+        <a href="super-nova-box.html">Supernova</a>
+        <a href="faq.html">FAQ</a>
+        <a href="cart.html" class="cart-button">
+          <i class="fas fa-shopping-bag"></i>
+          Cart (0)
+        </a>
+      </div>
+    </div>
+  </nav>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <i class="fas fa-star star-icon"></i>
+            <span>Feel Your Best On-The-Go</span>
+          </div>
+          <h1>Pocket-Sized <span class="highlight">Wellness</span> Patches!</h1>
+          <p>Transform your daily wellness routine with our innovative skin-administered patches. Convenient, effective, and perfect for your busy lifestyle.</p>
+          <div class="hero-buttons">
+            <a href="products.html" class="button primary-button">Shop Now</a>
+            <a href="about.html" class="button outline-button">
+              Learn More <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="spinning-circle"></div>
+          <div class="supernova-box">
+            <i class="fas fa-star box-star"></i>
+            <i class="fas fa-square patch patch-1"></i>
+            <i class="fas fa-square patch patch-2"></i>
+            <i class="fas fa-square patch patch-3"></i>
+            <i class="fas fa-square patch patch-4"></i>
+            <div class="box-reflection"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="hero-decoration circle-1"></div>
+    <div class="hero-decoration circle-2"></div>
+    <div class="hero-decoration circle-3"></div>
+  </section>
+
+  <!-- Feature Section -->
+  <section class="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="nova-logo">
+          <div class="nova-icon">NOVA<i class="fas fa-star small-star"></i></div>
+        </div>
+        <h2>Feel-Good Patches That Actually Work</h2>
+        <p>Our wellness patches are designed to give you the energy, focus, and rest you need - all in a super cute pocket-sized box.</p>
+      </div>
+      
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>B12 Energy Boost</h3>
+          <p>Vitamin B12 patches that give you natural, sustained energy throughout your day.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-coffee"></i>
+          </div>
+          <h3>Caffeine Kick</h3>
+          <p>A coffee alternative that delivers clean energy without the jitters or crashes.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-moon"></i>
+          </div>
+          <h3>Dream Catcher</h3>
+          <p>Melatonin-infused patches to help you fall asleep faster and sleep deeper.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="fas fa-battery-full"></i>
+          </div>
+          <h3>Pocket-Sized</h3>
+          <p>Our Super Nova box lets you carry your patches wherever you go for on-the-go wellness.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Showcase -->
+  <section class="product-showcase">
+    <div class="container">
+      <div class="section-header">
+        <h2><i class="fas fa-star spinning-star"></i> Shop Our Wellness Products <i class="fas fa-star spinning-star"></i></h2>
+        <p>Get our cute Supernova and refill it with our wellness patches for energy, sleep, focus, and more</p>
+      </div>
+      
+      <div class="product-grid">
+        <div class="product-card featured">
+          <div class="product-image supernova">
+            <img src="https://lovable-uploads.s3.amazonaws.com/1cceb897-3cf7-4446-8da8-c25b795d4935.png" alt="Supernova">
+            <div class="product-badge">Bestseller</div>
+            <h2 class="product-title-overlay">SUPERNOVA</h2>
+            <p class="product-subtitle-overlay">Pocket-Sized Patch Carrier</p>
+          </div>
+          <div class="product-details">
+            <h3>Supernova</h3>
+            <p>Our pocket-sized yellow box to store and carry your patches wherever life takes you!</p>
+            <div class="product-footer">
+              <span class="price">₹999</span>
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image purple">
+            <i class="fas fa-bolt product-icon"></i>
+            <div class="product-badge">New</div>
+          </div>
+          <div class="product-details">
+            <h3>B12 Boost</h3>
+            <p>A vitamin-infused refill patch that keeps you energized all day long</p>
+            <div class="product-footer">
+              <span class="price">₹1199</span>
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image blue">
+            <i class="fas fa-moon product-icon"></i>
+          </div>
+          <div class="product-details">
+            <h3>Dream Catcher</h3>
+            <p>Fall asleep faster and sleep deeper with our melatonin-infused refill patches</p>
+            <div class="product-footer">
+              <span class="price">₹1299</span>
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-image orange">
+            <i class="fas fa-coffee product-icon"></i>
+            <div class="product-badge">Popular</div>
+          </div>
+          <div class="product-details">
+            <h3>Caffeine Kick</h3>
+            <p>Your coffee alternative refill patch - clean energy without the jitters or crashes</p>
+            <div class="product-footer">
+              <span class="price">₹1199</span>
+              <button class="add-to-cart">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="view-all">
+        <a href="products.html" class="button outline-button">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-content">
+        <div class="about-text">
+          <h2>About NovaSkin</h2>
+          <p>NovaSkin was born from a simple idea: wellness should be accessible, effective, and fit seamlessly into your daily routine.</p>
+          <p>Our team of patch enthusiasts (yes that's a thing) have developed innovative wellness patches that deliver nutrients, supplements, and beneficial compounds through your skin - bypassing your digestive system for better absorption and more consistent results.</p>
+          <p>The Supernova, our signature storage box, helps you keep your wellness journey organized and stylish, wherever you go.</p>
+          <a href="about.html" class="button primary-button">
+            <i class="fas fa-sparkles"></i> Learn more about us
+          </a>
+        </div>
+        <div class="about-image">
+          <img src="https://lovable-uploads.s3.amazonaws.com/2d5ffb39-a182-49fe-805b-a9c7f6d443ac.png" alt="About NovaSkin">
+          <div class="about-card">
+            <p class="card-title">Daily Wellness</p>
+            <p class="card-text">Our patches make self-care simple and effective.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <div class="stars">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <h2>People Love Their Patches</h2>
+        <p>Don't just take our word for it. Here's what our patch-obsessed customers are saying</p>
+      </div>
+      
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <i class="fas fa-quote-right quote-icon"></i>
+          <div class="testimonial-header">
+            <div class="avatar">A</div>
+            <div>
+              <h4>Arjun T.</h4>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="testimonial-text">"Yaar, these patches are simply amazing! I use the energy one before my morning yoga and I feel active the whole day. Totally worth every rupee!"</p>
+        </div>
+        
+        <div class="testimonial-card">
+          <i class="fas fa-quote-right quote-icon"></i>
+          <div class="testimonial-header">
+            <div class="avatar">J</div>
+            <div>
+              <h4>Jaya P.</h4>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="testimonial-text">"I was a bit skeptical initially, but the sleep patch knocked me out faster than my grandmother's kadha. Absolutely brilliant product, no?"</p>
+        </div>
+        
+        <div class="testimonial-card">
+          <i class="fas fa-quote-right quote-icon"></i>
+          <div class="testimonial-header">
+            <div class="avatar">S</div>
+            <div>
+              <h4>Sanjay R.</h4>
+              <div class="rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="testimonial-text">"The calm patch has been my secret weapon during office presentations. My colleagues think I'm naturally cool as a cucumber now!"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter">
+    <div class="container">
+      <div class="newsletter-content">
+        <div class="newsletter-badge">
+          <i class="fas fa-party-horn"></i>
+          <span>Join the Nova Club!</span>
+        </div>
+        
+        <h2>Get Nova Updates & Exclusive Offers</h2>
+        
+        <p>Sign up for our newsletter and be the first to know about new product drops, special deals, and skin-saving content!</p>
+        
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="button primary-button">
+            Sign Up <i class="fas fa-star"></i>
+          </button>
+        </form>
+        
+        <p class="form-disclaimer">We promise not to spam! Only good vibes and skin-loving updates.</p>
+      </div>
+    </div>
+    
+    <div class="newsletter-decoration left">
+      <i class="fas fa-star decoration-star"></i>
+      <i class="fas fa-sparkles decoration-sparkle"></i>
+    </div>
+    
+    <div class="newsletter-decoration right">
+      <i class="fas fa-star decoration-star"></i>
+      <i class="fas fa-sparkles decoration-sparkle"></i>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-columns">
+        <div class="footer-column">
+          <a href="index.html" class="logo footer-logo">
+            <div class="logo-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <span>NOVASKIN</span>
+          </a>
+          <p>Making life a little more patchy, one sticky situation at a time.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Shop</h3>
+          <ul>
+            <li><a href="products.html">All Products</a></li>
+            <li><a href="bestsellers.html">Bestsellers</a></li>
+            <li><a href="new.html">New Arrivals</a></li>
+            <li><a href="bundles.html">Patch Bundles</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Help</h3>
+          <ul>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="shipping.html">Shipping</a></li>
+            <li><a href="returns.html">Returns</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Company</h3>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="press.html">Press</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>© 2023 NOVASKIN. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="terms.html">Terms of Service</a>
+          <a href="accessibility.html">Accessibility</a>
+        </div>
+      </div>
+      
+      <div class="footer-credit">
+        Made with <i class="fas fa-heart"></i> by NOVASKIN Team
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple toggle for mobile menu
+    document.querySelector('.mobile-menu-button').addEventListener('click', function() {
+      document.querySelector('.nav-links').classList.toggle('show');
+    });
+
+    // Add to cart functionality
+    const addToCartButtons = document.querySelectorAll('.add-to-cart');
+    addToCartButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        alert('Item added to cart!');
+      });
+    });
+  </script>
+</body>
 </html>
